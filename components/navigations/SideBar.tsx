@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./sidebar.module.scss";
+import SideBarLink from "./SideBarLink";
 
 const SideBar = () => {
   const [selected, setSelected] = useState("");
@@ -12,8 +13,8 @@ const SideBar = () => {
       threshold: 0.3,
     };
 
-    const callback = (entries: any) => {
-      entries.forEach((entry: any) => {
+    const callback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setSelected(entry.target.id);
         }
@@ -21,7 +22,7 @@ const SideBar = () => {
     };
 
     const observer = new IntersectionObserver(callback, option);
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach((section: Element) => observer.observe(section));
   }, []);
 
   return (
@@ -36,95 +37,55 @@ const SideBar = () => {
           AS<span>.</span>
         </Link>
 
-        <motion.div
-          initial={{ x: -70 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <Link
-            className={`${styles.sideBarLink} ${selected === "about" ? styles.selected : ""}`}
-            href="/#about"
-            onClick={() => setSelected("about")}
-            aria-label="About me"
-          >
-            About
-          </Link>
-        </motion.div>
+        <SideBarLink
+          href="/#about"
+          label="About"
+          ariaLabel="About me"
+          onClick={() => setSelected("about")}
+          selected={selected}
+          delay={0.1}
+          key={1}
+        />
 
-        <motion.div
-          initial={{ x: -70 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Link
-            className={`${styles.sideBarLink} ${selected === "experience" ? styles.selected : ""}`}
-            href="/#experience"
-            onClick={() => setSelected("experience")}
-            aria-label="My experience"
-          >
-            Exp.
-          </Link>
-        </motion.div>
+        <SideBarLink
+          href="/#skills"
+          label="Skills"
+          ariaLabel="My tech stacks"
+          onClick={() => setSelected("skills")}
+          selected={selected}
+          key={2}
+          delay={0.2}
+        />
 
-        <motion.div
-          initial={{ x: -70 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <Link
-            className={`${styles.sideBarLink} ${selected === "stacks" ? styles.selected : ""}`}
-            href="/#stacks"
-            onClick={() => setSelected("stacks")}
-            aria-label="My tech stacks"
-          >
-            Skills
-          </Link>
-        </motion.div>
+        <SideBarLink
+          href="/#projects"
+          label="Projects"
+          ariaLabel="My projects"
+          onClick={() => setSelected("projects")}
+          selected={selected}
+          key={3}
+          delay={0.3}
+        />
 
-        <motion.div
-          initial={{ x: -70 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <Link
-            className={`${styles.sideBarLink} ${selected === "projects" ? styles.selected : ""}`}
-            href="/#projects"
-            onClick={() => setSelected("projects")}
-            aria-label="My projects"
-          >
-            Projects
-          </Link>
-        </motion.div>
+        <SideBarLink
+          href="/#certification"
+          label="Certif."
+          ariaLabel="My certifications"
+          onClick={() => setSelected("certification")}
+          selected={selected}
+          key={4}
+          delay={0.4}
+        />
 
-        <motion.div
-          initial={{ x: -70 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          <Link
-            className={`${styles.sideBarLink} ${selected === "certification" ? styles.selected : ""}`}
-            href="/#certification"
-            onClick={() => setSelected("certification")}
-            aria-label="My certifications"
-          >
-            Certif.
-          </Link>
-        </motion.div>
-
-        <motion.div
-          initial={{ x: -70 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <Link
-            className={`${styles.sideBarLink} ${selected === "contacts" ? styles.selected : ""}`}
-            href="/#contacts"
-            onClick={() => setSelected("contacts")}
-            aria-label="My contacts"
-          >
-            Contacts
-          </Link>
-        </motion.div>
+        <SideBarLink
+          href="/#contacts"
+          label="Contacts"
+          ariaLabel="Let's contact me"
+          onClick={() => setSelected("contacts")}
+          selected={selected}
+          key={5}
+          delay={0.5}
+        />
       </motion.nav>
     </div>
   );
