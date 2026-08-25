@@ -28,9 +28,9 @@ const SideBar = () => {
   return (
     <div style={{ background: "var(--background-dark)" }}>
       <motion.nav
-        initial={{ x: -70 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
         className={styles.sideBar}
       >
         <Link href="/" className={styles.logo}>
