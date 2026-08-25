@@ -78,10 +78,10 @@ const SideBar = () => {
         />
 
         <SideBarLink
-          href="/#contacts"
-          label="Contacts"
+          href="/#contact"
+          label="Contact"
           ariaLabel="Let's contact me"
-          onClick={() => setSelected("contacts")}
+          onClick={() => setSelected("contact")}
           selected={selected}
           key={5}
           delay={0.5}

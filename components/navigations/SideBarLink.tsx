@@ -21,7 +21,7 @@ const SideBarLink = ({
     <motion.div
       initial={{ x: -70 }}
       animate={{ x: 0 }}
-      transition={{ duration: 0.5, delay }}
+      transition={{ duration: 0.7, delay }}
     >
       <Link
         className={`${styles.sideBarLink} ${selected === href.split("#")[1] ? styles.selected : ""}`}
