@@ -23,6 +23,7 @@ const NavBar = () => {
             title="Resume"
           >
             <button className={styles.outlineButton} aria-label="View Resume">
+              <p>CV</p>
               <TbFileCvFilled size="2.4rem" />
               <TbDownload size="2.4rem" />
             </button>
