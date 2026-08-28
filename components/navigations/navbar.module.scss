@@ -80,39 +80,6 @@
   }
 }
 
-.outlineButton {
-  outline: none;
-  border: none;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  pad: 1rem 2rem;
-
-  border: 1px solid var(--brand);
-  background: transparent;
-  color: var(--brand);
-  font-size: var(--text-sm);
-  border-radius: 4px;
-
-  position: relative;
-  z-index: 20;
-  overflow: hidden;
-  transition: 0.2s color;
-
-  @media (max-width: 480px) {
-    padding: 0.5rem;
-    svg {
-      display: none;
-    }
-  }
-  @media (max-width: 360px) {
-    font-size: var(--text-xs);
-    padding: 0.3rem;
-  }
-}
-
 .outlineButton::before {
   content: "";
   position: absolute;

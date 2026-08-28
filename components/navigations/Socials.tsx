@@ -24,7 +24,7 @@ const Socials = () => {
           title="LinkedIn"
           aria-label="Contact me on Linkedin"
         >
-          <FaLinkedin size="2.4rem" />
+          <FaLinkedin size="2.2rem" />
         </a>
       </motion.span>
 

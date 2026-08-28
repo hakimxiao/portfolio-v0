@@ -1,0 +1,83 @@
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(31rem, 35rem);
+  gap: 4rem;
+  align-items: center;
+
+  > :first-child {
+    min-width: 0;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    > :first-child {
+      width: 100%;
+    }
+  }
+}
+
+.profileCardSlot {
+  justify-self: end;
+  align-self: center;
+  width: min(100%, 35rem);
+  padding: 1.6rem 0 3.2rem;
+
+  @media (max-width: 900px) {
+    justify-self: center;
+    width: min(100%, 33rem);
+  }
+
+  @media (max-width: 480px) {
+    width: min(100%, calc(100vw - 3rem));
+  }
+}
+
+.profileCardReveal {
+  padding: 1.6rem 0 3.6rem;
+}
+
+.profileCard {
+  width: 100%;
+}
+
+.aboutText {
+  margin-bottom: 2.4rem;
+  font-weight: 200;
+  // text-align: justify;
+  span {
+    font-weight: 600;
+  }
+  @media (max-width: 480px) {
+    text-align: left;
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.linksText {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  font-size: var(--text-sm);
+  color: var(--brand);
+}
+
+.highlightFirstLetter:first-letter {
+  background: var(--background-light);
+  padding: 1rem;
+  border-radius: 0.4rem;
+
+  font-size: var(--text-md);
+  font-weight: bold;
+
+  margin-right: 0.6rem;
+
+  float: left;
+}

@@ -1,5 +1,6 @@
 "use client";
 
+import About from "@/components/about/About";
 import Hero from "@/components/hero/Hero";
 import NavBar from "@/components/navigations/NavBar";
 import SideBar from "@/components/navigations/SideBar";
@@ -13,6 +14,7 @@ export default function Home() {
         <main id="main">
           <NavBar />
           <Hero />
+          <About />
         </main>
       </div>
     </>
