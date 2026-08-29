@@ -4,6 +4,7 @@ import About from "@/components/about/About";
 import Hero from "@/components/hero/Hero";
 import NavBar from "@/components/navigations/NavBar";
 import SideBar from "@/components/navigations/SideBar";
+import Skills from "@/components/skills/Skills";
 import styles from "@/components/utils/home.module.scss";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
           <NavBar />
           <Hero />
           <About />
+          <Skills />
         </main>
       </div>
     </>
