@@ -25,6 +25,13 @@
   // pointer-events: auto;
 }
 
+.profileRevealContent {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  isolation: isolate;
+}
+
 .rings canvas {
   display: block;
   width: 100% !important;

@@ -64,10 +64,16 @@ const About = () => {
                 enableTilt={false}
                 enableMobileTilt={false}
                 details={[
-                  { label: "Nama", value: "Abu Solihin Alhakim" },
-                  { label: "Profesi", value: "Full-Stack Developer" },
-                  { label: "Stack", value: "Next.js, React Native, NestJS" },
-                  { label: "Lokasi", value: "Indonesia" },
+                  { label: "Nickname", value: "Hakim" },
+                  { label: "Age", value: "23th" },
+                  {
+                    label: "Origin",
+                    value: "Palembang, Indonesian",
+                  },
+                  {
+                    label: "Motto",
+                    value: "Driven, consistent, tech-curious.",
+                  },
                 ]}
                 iconUrl="/assets/iconpattern.svg"
                 behindGlowEnabled={false}
