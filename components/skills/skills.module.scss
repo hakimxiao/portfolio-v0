@@ -25,6 +25,8 @@
 }
 
 .infoTitle {
+  width: 100%;
+
   h4 {
     display: flex;
     align-items: center;
@@ -39,23 +41,34 @@
   }
 }
 
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 68rem);
+  margin-inline: auto;
+}
+
 .info {
   display: flex;
+  justify-content: center;
 
-  margin: 0.7rem;
+  width: 100%;
+  margin: 0.7rem 0;
   gap: 0.7rem;
 }
 
 .infoText {
+  max-width: 68rem;
   margin-bottom: 2.4rem;
-  margin-top: 4rem;
+  margin-top: 3.2rem;
   font-weight: 200;
-  // text-align: justify;
+  line-height: 1.7;
+  text-align: center;
+
   span {
+    color: var(--brand);
     font-weight: 600;
-  }
-  @media (max-width: 480px) {
-    text-align: left;
   }
 }
 
@@ -66,19 +79,169 @@
   margin-bottom: 4.8rem;
 }
 
+.skillButton {
+  display: inline-flex;
+  border-radius: 999px;
+  line-height: 0;
+
+  &:focus-visible {
+    outline: 2px solid rgba(190, 99, 249, 0.55);
+    outline-offset: 0.4rem;
+  }
+}
+
 .skillChip {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   width: 5.2rem;
   height: 5.2rem;
   padding: 0;
+
+  cursor: pointer;
+
   border: 1px solid rgba(190, 99, 249, 0.22);
+  background: transparent;
+
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .skillChip img {
   display: block;
   width: 3.2rem;
-  height: 3.2rem;
+  height: auto;
+  max-height: 3.2rem;
   object-fit: contain;
+
+  position: relative;
+  z-index: 3;
+}
+
+.activeSkill {
+  opacity: 1;
+  border-color: rgba(190, 99, 249, 0.8);
+  background: rgba(190, 99, 249, 0.06);
+  box-shadow:
+    inset 0 0 10px rgba(190, 99, 249, 0.12),
+    0 0 8px rgba(190, 99, 249, 0.18);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -35%;
+    z-index: 0;
+    padding: 1px;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 330deg,
+      rgba(255, 255, 255, 0.15) 338deg,
+      #ffffff 345deg,
+      var(--brand) 352deg,
+      #ffffff 359deg,
+      transparent 360deg
+    );
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    filter: blur(4px);
+    opacity: 0.9;
+    animation: spinGlow 5s linear infinite;
+  }
+}
+@keyframes spinGlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    gap: 3.2rem;
+    align-items: stretch;
+  }
+
+  .statColumn h4,
+  .infoTitle h4 {
+    margin-bottom: 1.6rem;
+
+    span {
+      font-size: var(--text-sm);
+    }
+  }
+
+  .infoContent {
+    width: 100%;
+  }
+
+  .info {
+    margin: 0;
+  }
+
+  .image {
+    display: block;
+    width: 9.6rem;
+    height: auto;
+    max-height: 9.6rem;
+    object-fit: contain;
+  }
+
+  .infoText {
+    max-width: 100%;
+    margin-top: 2.2rem;
+    margin-bottom: 0;
+    color: rgba(235, 236, 243, 0.82);
+    font-size: 1.45rem;
+    line-height: 1.65;
+    text-align: center;
+
+    span {
+      font-size: 1.42rem;
+    }
+  }
+
+  .statGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: min(100%, 30rem);
+    margin: 0 auto 2.4rem;
+    gap: 0.8rem 0.9rem;
+  }
+
+  .skillButton {
+    width: auto;
+  }
+
+  .skillChip {
+    width: 4.6rem;
+    height: 4.6rem;
+  }
+
+  .skillChip img {
+    width: 2.8rem;
+    height: auto;
+    max-height: 2.8rem;
+  }
+}
+
+@media (max-width: 310px) {
+  .statGrid {
+    width: min(100%, 24rem);
+  }
 }

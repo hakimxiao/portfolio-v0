@@ -9,24 +9,33 @@ import Image from "next/image";
 interface PropsIcon {
   name: string;
   icon: string;
+  handleClick: () => void;
+  isActive: boolean;
 }
-
 interface PropsInfo {
   title: string;
   image: string;
   description: string;
 }
-
-const SvgSkills = ({ name, icon }: PropsIcon) => (
-  <span className={`${styles.skillChip} chip`}>
-    <img src={icon} alt={name} width={32} height={32} loading="lazy" />
-  </span>
+const SvgSkills = ({ name, icon, handleClick, isActive }: PropsIcon) => (
+  <button
+    type="button"
+    onClick={handleClick}
+    className={`${styles.skillButton} cursor-pointer`}
+    aria-label={`Show ${name} skill details`}
+    aria-pressed={isActive}
+  >
+    <span
+      className={`${styles.skillChip} chip ${isActive ? styles.activeSkill : ""}`}
+    >
+      <Image src={icon} alt="" width={32} height={32} sizes="32px" />
+    </span>
+  </button>
 );
-
 const InfoSkills = ({ description, image, title }: PropsInfo) => {
   return (
     <>
-      <div className={`${styles.info}`}>
+      <div className={styles.info}>
         <Reveal>
           <Image
             src={image}
@@ -34,24 +43,24 @@ const InfoSkills = ({ description, image, title }: PropsInfo) => {
             width={150}
             height={150}
             className={styles.image}
-            loading="eager"
+            sizes="(max-width: 480px) 96px, 150px"
           />
         </Reveal>
       </div>
-      <Reveal>
-        <p className={styles.infoText}>{description}</p>
+      <Reveal width="100%">
+        <p className={styles.infoText}>
+          <span>{title}</span> - {description}
+        </p>
       </Reveal>
     </>
   );
 };
-
 const Skills = () => {
   const [stackInfo, setStackInfo] = useState({
-    icon: "",
-    title: "",
-    description: "",
+    icon: skills[0].icon,
+    title: skills[0].title,
+    description: skills[0].description,
   });
-
   return (
     <section id="skills" className="section-wrapper">
       <SectionHeader title="Skills" dir="r" />
@@ -63,12 +72,12 @@ const Skills = () => {
               <span>What i use</span>
             </h4>
           </Reveal>
-          <div className="flex gap-2">
+          <div className={styles.infoContent}>
             <InfoSkills
-              description={skills[0].description}
-              image={skills[0].icon}
-              title={skills[0].title}
-              key={1}
+              key={stackInfo.title}
+              description={stackInfo.description}
+              image={stackInfo.icon}
+              title={stackInfo.title}
             />
           </div>
         </div>
@@ -80,8 +89,16 @@ const Skills = () => {
                 <span>Stack</span>
               </h4>
               <div className={styles.statGrid}>
-                {skills.map(({ id, name, icon }) => (
-                  <SvgSkills key={id} name={name} icon={icon} />
+                {skills.map(({ id, name, icon, description, title }) => (
+                  <SvgSkills
+                    key={id}
+                    name={name}
+                    icon={icon}
+                    handleClick={() =>
+                      setStackInfo({ icon, title, description })
+                    }
+                    isActive={title === stackInfo.title}
+                  />
                 ))}
               </div>
             </div>
