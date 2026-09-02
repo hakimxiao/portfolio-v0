@@ -92,7 +92,7 @@ const projects = [
   },
 
   {
-    cat: "App, Next",
+    cat: "💌, App, Next",
     title: "Mimotel",
     img: "/assets/gallery/mimotel.webp",
     code: "https://github.com/hakimxiao/booking-hotel",
@@ -188,7 +188,7 @@ const projects = [
   },
 
   {
-    cat: "App, Flutter",
+    cat: "💌, App, Flutter",
     title: "Amazon Clone",
     img: "/assets/gallery/amazon-clone.webp",
     code: "https://github.com/hakimxiao/amazon-clone-flutter",
@@ -223,7 +223,7 @@ const projects = [
   },
 
   {
-    cat: "Design, React",
+    cat: "💌, Design, React",
     title: "Game Landing Page",
     img: "/assets/gallery/game-landing.webp",
     code: "https://github.com/hakimxiao/awward-web",
