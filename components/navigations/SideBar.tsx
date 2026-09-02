@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -5,25 +7,60 @@ import styles from "./sidebar.module.scss";
 import SideBarLink from "./SideBarLink";
 
 const SideBar = () => {
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("hero");
 
   useEffect(() => {
-    const sections = document.querySelectorAll(".section-wrapper");
-    const option = {
-      threshold: 0.3,
-    };
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>(".section-wrapper[id]"),
+    );
 
-    const callback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setSelected(entry.target.id);
+    if (!sections.length) {
+      return;
+    }
+
+    let animationFrame: number | null = null;
+
+    const updateSelectedSection = () => {
+      animationFrame = null;
+
+      const viewportFocusPoint = window.innerHeight * 0.45;
+      let activeSection = sections[0].id;
+
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= viewportFocusPoint) {
+          activeSection = section.id;
+        } else {
+          break;
         }
-      });
+      }
+
+      setSelected(activeSection);
     };
 
-    const observer = new IntersectionObserver(callback, option);
-    sections.forEach((section: Element) => observer.observe(section));
+    const requestUpdate = () => {
+      if (animationFrame === null) {
+        animationFrame = window.requestAnimationFrame(updateSelectedSection);
+      }
+    };
+
+    updateSelectedSection();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+
+      if (animationFrame !== null) {
+        window.cancelAnimationFrame(animationFrame);
+      }
+    };
   }, []);
+
+  const handleLogoClick = () => {
+    setSelected("hero");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div style={{ background: "var(--background-dark)" }}>
@@ -33,7 +70,7 @@ const SideBar = () => {
         transition={{ duration: 0.8 }}
         className={styles.sideBar}
       >
-        <Link href="/" className={styles.logo}>
+        <Link href="/#hero" className={styles.logo} onClick={handleLogoClick}>
           AS<span>.</span>
         </Link>
 
