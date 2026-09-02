@@ -248,3 +248,148 @@ export const skills = [
     icon: "/assets/skills/stripe.png",
   },
 ];
+
+export const projects = [
+  {
+    title: "Meteosphere",
+    img: "/assets/gallery/meteosphere.webp",
+    code: "https://github.com/hakimxiao/magang-web-analisis-cuaca",
+    link: "https://web-analisis-cuaca-xy5f.vercel.app",
+    tech: ["Next.js", "OpenStreetMap", "Tailwind", "11labs", "BMKG API"],
+    desc: "A real-time weather monitoring platform for Palembang that combines BMKG and weather data with interactive maps for wind, rainfall, temperature, and earthquake information.",
+    modal:
+      "Meteosphere is a web-based weather visualization platform developed during my internship at BMKG South Sumatra. Built with Next.js, OpenStreetMap, and BMKG APIs, it provides real-time weather insights specifically for Palembang. Users can explore interactive layers for wind movement, rainfall intensity, temperature distribution, and earthquake activity directly on the map. The platform also includes weather forecasts, current atmospheric conditions, and voice-assisted weather presentations powered by ElevenLabs, making weather information more accessible and engaging.",
+  },
+  {
+    title: "Mimotel",
+    img: "/assets/gallery/mimotel.webp",
+    code: "https://github.com/hakimxiao/booking-hotel",
+    link: "https://booking-hotel-rho-ashy.vercel.app",
+    tech: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Prisma",
+      "PostgreSQL",
+      "Auth.js",
+      "Midtrans",
+    ],
+    desc: "A modern hotel booking platform featuring secure authentication, online payments, room reservations, and a streamlined booking experience.",
+
+    modal:
+      "Mimotel is a full-stack hotel booking application built with Next.js, Prisma, PostgreSQL, and Auth.js. The platform allows users to browse available rooms, manage reservations, and complete bookings through Midtrans payment integration. It includes secure authentication, booking management, date-based reservation workflows, and a responsive user interface designed for both desktop and mobile devices. The project demonstrates modern full-stack development practices, combining database management, user authentication, payment processing, and scalable application architecture.",
+  },
+  {
+    title: "Expo-Ecommerce",
+    img: "/assets/gallery/expoecommerce.webp",
+    code: "https://github.com/hakimxiao/fullstack-ecommerce-rn-expo",
+    link: "https://github.com/hakimxiao/fullstack-ecommerce-rn-expo",
+
+    tech: [
+      "React Native",
+      "Expo",
+      "React",
+      "Vite",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "Clerk",
+      "Stripe",
+      "Cloudinary",
+      "React Query",
+      "Tailwind CSS",
+    ],
+
+    desc: "A full-stack e-commerce monorepo featuring a React Native mobile app, web-based admin dashboard, and Express backend with authentication, product management, cloud media storage, and Stripe payments.",
+
+    modal:
+      "Expo Ecommerce is a full-stack e-commerce platform built as a monorepo with three main applications: a React Native mobile app powered by Expo, a Vite-based admin dashboard, and a Node.js backend built with Express. The platform uses MongoDB with Mongoose for data management, Clerk for authentication, Cloudinary for product image storage, and Stripe for secure payment processing. The mobile application provides the customer shopping experience, while the admin dashboard allows products and store data to be managed through a dedicated web interface. React Query is used for efficient server-state management and API communication, creating a scalable architecture that connects the mobile client, administration system, and backend services.",
+  },
+  {
+    title: "Cocktail",
+    img: "/assets/gallery/cocktail.webp",
+    code: "https://github.com/hakimxiao/cocktail-drink",
+    link: "https://cocktail-drink-sigma.vercel.app",
+
+    tech: ["React", "Vite", "Tailwind CSS", "GSAP", "React Responsive"],
+
+    desc: "A modern cocktail landing page built with React and Tailwind CSS, featuring immersive animations and responsive layouts powered by GSAP.",
+
+    modal:
+      "Cocktail is a modern and immersive landing page built with React, Vite, and Tailwind CSS. The project focuses on creating an engaging visual experience through carefully crafted GSAP animations and smooth transitions. It features responsive layouts that adapt across different screen sizes, interactive sections, and dynamic motion effects that bring the cocktail-themed interface to life. The project demonstrates my ability to combine modern frontend development with animation and responsive design to create visually engaging web experiences.",
+  },
+  {
+    title: "Amazon Clone",
+    img: "/assets/gallery/amazon-clone.webp",
+    code: "https://github.com/hakimxiao/amazon-clone-flutter",
+    link: "https://github.com/hakimxiao/amazon-clone-flutter",
+
+    tech: [
+      "Flutter",
+      "Dart",
+      "Provider",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Cloudinary",
+      "Google Pay",
+      "Apple Pay",
+    ],
+
+    desc: "A full-stack e-commerce mobile application built with Flutter and a Node.js backend, featuring product browsing, authentication, cart management, image uploads, ratings, and online payments.",
+
+    modal:
+      "Amazon Clone is a full-stack e-commerce mobile application built with Flutter and backed by a Node.js and Express API. The project is structured as a monorepo, with the Flutter application handling the customer experience while the backend is organized separately inside the services folder. MongoDB with Mongoose is used for data management, while JWT and bcrypt provide authentication and password security. The application includes product browsing, categories, image uploads through Cloudinary, product ratings, cart functionality, order management, and payment integration with Apple Pay and Google Pay. Provider is used for state management, creating a structured and responsive shopping experience across the application.",
+  },
+  {
+    title: "Game Landing Page",
+    img: "/assets/gallery/game-landing.webp",
+    code: "https://github.com/hakimxiao/awward-web",
+    link: "https://awward-web-zeta.vercel.app",
+
+    tech: ["React", "Vite", "GSAP", "Tailwind CSS"],
+
+    desc: "A modern game landing page built with React and Vite, featuring immersive GSAP animations, interactive sections, and a responsive visual experience.",
+
+    modal:
+      "Game Landing Page is a modern frontend project built with React and Vite, inspired by award-winning web experiences. The project focuses on creating an immersive and interactive interface through GSAP animations, smooth transitions, and carefully designed visual sections. React is used to build the component-based interface, while Tailwind CSS provides responsive styling and layout utilities. The website also uses React Icons and React Use for additional interface and interaction functionality. The project demonstrates how modern frontend technologies and animation techniques can be combined to create an engaging game-focused landing page.",
+  },
+  {
+    title: "GoWez",
+    img: "/assets/gallery/gowez.webp",
+    code: "https://github.com/hakimxiao/expo-gowez-app",
+    link: "https://github.com/hakimxiao/expo-gowez-app",
+
+    tech: [
+      "React Native",
+      "Expo",
+      "Expo Router",
+      "TypeScript",
+      "NativeWind",
+      "Zustand",
+      "Google Maps",
+      "Midtrans",
+    ],
+
+    desc: "A mobile transportation application built with React Native and Expo, featuring Google Maps integration, location services, route navigation, and Midtrans payment processing.",
+
+    modal:
+      "GoWez is a mobile transportation application built with React Native and Expo, designed to provide a location-based booking and navigation experience. The application uses Expo APIs for device and location capabilities, while Google Maps is integrated for interactive maps, place search, route directions, and navigation. Expo Router is used for structured application navigation, with Zustand handling global state management and NativeWind providing a responsive styling system. The app also integrates Midtrans for payment processing and includes secure storage, bottom sheets, WebView integration, and other native capabilities to create a complete and interactive mobile experience.",
+  },
+  {
+    title: "iPhone 3D Website",
+    img: "/assets/gallery/iphone.webp",
+    code: "https://github.com/hakimxiao/iPhone-3d/",
+    link: "https://i-phone-3d.vercel.app/",
+
+    tech: ["React", "Vite", "Three.js", "GSAP", "Tailwind CSS"],
+
+    desc: "A modern Apple-inspired website built with React and Vite, featuring an interactive 3D iPhone experience, smooth GSAP animations, and immersive visual interactions.",
+
+    modal:
+      "iPhone 3D Website is a modern frontend project inspired by Apple's product presentation experience. The project focuses on creating an immersive product showcase by combining React with Three.js and React Three Fiber to render and interact with 3D iPhone models directly in the browser. GSAP and @gsap/react are used to create smooth animations, transitions, and interactive visual effects throughout the experience. Tailwind CSS provides responsive styling and layout utilities, while React Three Drei is used to simplify and enhance the 3D scene implementation. The project is built with Vite for a fast development and optimized production workflow, with Sentry integrated for application monitoring and error tracking. Overall, the project demonstrates how React, WebGL-based 3D rendering, and modern animation techniques can be combined to create an engaging and interactive product-focused website.",
+  },
+];
