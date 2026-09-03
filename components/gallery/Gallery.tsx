@@ -1,4 +1,6 @@
-import { useState } from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowUp } from "react-icons/ai";
 import { TransitionLink } from "../utils/TransitionLink";
 import GalleryItem from "@/components/gallery/GalleryItem";
@@ -20,10 +22,17 @@ const Gallery = () => {
     );
   };
 
-  const handleScroll = () => {
-    setGoUpBtn(window.scrollY >= 350);
-  };
-  window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    const handleScroll = () => {
+      setGoUpBtn(window.scrollY >= 350);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
