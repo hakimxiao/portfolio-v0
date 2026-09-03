@@ -1,6 +1,7 @@
 "use client";
 
 import About from "@/components/about/About";
+import Experience from "@/components/experience/Experience";
 import Hero from "@/components/hero/Hero";
 import NavBar from "@/components/navigations/NavBar";
 import SideBar from "@/components/navigations/SideBar";
@@ -19,6 +20,7 @@ export default function Home() {
           <About />
           <Skills />
           <Showcase />
+          <Experience />
         </main>
       </div>
     </>

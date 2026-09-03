@@ -23,6 +23,14 @@ const SideBar = () => {
     const updateSelectedSection = () => {
       animationFrame = null;
 
+      const hashSectionId = window.location.hash.slice(1);
+      const hashSection = sections.find((section) => section.id === hashSectionId);
+
+      if (hashSection && Math.abs(hashSection.getBoundingClientRect().top) < 2) {
+        setSelected(hashSection.id);
+        return;
+      }
+
       const viewportFocusPoint = window.innerHeight * 0.45;
       let activeSection = sections[0].id;
 
@@ -46,10 +54,12 @@ const SideBar = () => {
     updateSelectedSection();
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
+    window.addEventListener("hashchange", requestUpdate);
 
     return () => {
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
+      window.removeEventListener("hashchange", requestUpdate);
 
       if (animationFrame !== null) {
         window.cancelAnimationFrame(animationFrame);
@@ -105,13 +115,23 @@ const SideBar = () => {
         />
 
         <SideBarLink
+          href="/#experience"
+          label="Exp."
+          ariaLabel="My experience"
+          onClick={() => setSelected("experience")}
+          selected={selected}
+          key={4}
+          delay={0.4}
+        />
+
+        <SideBarLink
           href="/#certification"
           label="Certif."
           ariaLabel="My certifications"
           onClick={() => setSelected("certification")}
           selected={selected}
-          key={4}
-          delay={0.4}
+          key={5}
+          delay={0.5}
         />
 
         <SideBarLink
@@ -120,8 +140,8 @@ const SideBar = () => {
           ariaLabel="Let's contact me"
           onClick={() => setSelected("contact")}
           selected={selected}
-          key={5}
-          delay={0.5}
+          key={6}
+          delay={0.6}
         />
       </motion.nav>
     </div>
