@@ -19,7 +19,7 @@ const Profile = () => {
             attenuation={13}
             lineThickness={1.65}
             blur={0.35}
-            color="#be63f9"
+            color="#5b8def"
           />
           <div className={styles.imageFrame}>
             <Image

@@ -7,7 +7,11 @@ interface Props {
   overflow?: "hidden" | "visible";
 }
 
-const Reveal = ({ children, width = "fit-content", overflow = "hidden" }: Props) => {
+const Reveal = ({
+  children,
+  width = "fit-content",
+  overflow = "hidden",
+}: Props) => {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
 
