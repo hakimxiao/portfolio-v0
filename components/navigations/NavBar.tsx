@@ -17,7 +17,7 @@ const NavBar = () => {
           transition={{ duration: 0.5, delay: 0.7 }}
         >
           <a
-            href="https://cvdesignr.com/"
+            href="https://cvdesignr.com/p/ENo6L3KKgxMMG5e"
             target="_blank"
             rel="nofollow"
             title="Resume"
