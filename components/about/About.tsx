@@ -43,7 +43,6 @@ const About = () => {
           <Reveal>
             <div className={styles.links}>
               <div className={styles.linksText}>
-                <span>Links</span>
                 <FaArrowRight />
               </div>
               <Socials />
