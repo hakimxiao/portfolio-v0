@@ -50,7 +50,7 @@ const Contact = () => {
               aria-label="Send me an email"
             >
               <SiGmail size="2.4rem" />
-              <span>contactabusolihin@gmail.com</span>
+              <span>contactabusolihin</span>
             </a>
           </div>
         </Reveal>

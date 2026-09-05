@@ -103,12 +103,12 @@ const SideBar = () => {
           onClick={handleLogoClick}
           aria-label="Home"
         >
-          <FiHome size={18} strokeWidth={2.2} />
+          <FiHome size={18} strokeWidth={3} />
         </Link>
 
         <SideBarLink
           href="/#about"
-          icon={<FiUser size={18} strokeWidth={2.2} />}
+          icon={<FiUser size={18} strokeWidth={3} />}
           ariaLabel="About me"
           onClick={() => setSelected("about")}
           selected={selected}
@@ -117,7 +117,7 @@ const SideBar = () => {
 
         <SideBarLink
           href="/#skills"
-          icon={<FiCode size={18} strokeWidth={2.2} />}
+          icon={<FiCode size={18} strokeWidth={3} />}
           ariaLabel="My tech stacks"
           onClick={() => setSelected("skills")}
           selected={selected}
@@ -126,7 +126,7 @@ const SideBar = () => {
 
         <SideBarLink
           href="/#projects"
-          icon={<FiFolder size={18} strokeWidth={2.2} />}
+          icon={<FiFolder size={18} strokeWidth={3} />}
           ariaLabel="My projects"
           onClick={() => setSelected("projects")}
           selected={selected}
@@ -135,7 +135,7 @@ const SideBar = () => {
 
         <SideBarLink
           href="/#experience"
-          icon={<FiBriefcase size={18} strokeWidth={2.2} />}
+          icon={<FiBriefcase size={18} strokeWidth={3} />}
           ariaLabel="My experience"
           onClick={() => setSelected("experience")}
           selected={selected}
@@ -144,7 +144,7 @@ const SideBar = () => {
 
         <SideBarLink
           href="/#certification"
-          icon={<FiAward size={18} strokeWidth={2.2} />}
+          icon={<FiAward size={18} strokeWidth={3} />}
           ariaLabel="My certifications"
           onClick={() => setSelected("certification")}
           selected={selected}
@@ -153,7 +153,7 @@ const SideBar = () => {
 
         <SideBarLink
           href="/#contact"
-          icon={<FiMail size={18} strokeWidth={2.2} />}
+          icon={<FiMail size={18} strokeWidth={3} />}
           ariaLabel="Contact me"
           onClick={() => setSelected("contact")}
           selected={selected}
