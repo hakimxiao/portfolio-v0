@@ -2,6 +2,7 @@
 
 import About from "@/components/about/About";
 import Certification from "@/components/certification/Certification";
+import Contact from "@/components/contact/Contact";
 import Experience from "@/components/experience/Experience";
 import Hero from "@/components/hero/Hero";
 import NavBar from "@/components/navigations/NavBar";
@@ -23,6 +24,7 @@ export default function Home() {
           <Showcase />
           <Experience />
           <Certification />
+          <Contact />
         </main>
       </div>
     </>

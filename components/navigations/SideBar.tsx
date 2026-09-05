@@ -5,6 +5,15 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./sidebar.module.scss";
 import SideBarLink from "./SideBarLink";
+import {
+  FiHome,
+  FiUser,
+  FiCode,
+  FiFolder,
+  FiBriefcase,
+  FiAward,
+  FiMail,
+} from "react-icons/fi";
 
 const SideBar = () => {
   const [selected, setSelected] = useState("hero");
@@ -14,9 +23,7 @@ const SideBar = () => {
       document.querySelectorAll<HTMLElement>(".section-wrapper[id]"),
     );
 
-    if (!sections.length) {
-      return;
-    }
+    if (!sections.length) return;
 
     let animationFrame: number | null = null;
 
@@ -24,9 +31,14 @@ const SideBar = () => {
       animationFrame = null;
 
       const hashSectionId = window.location.hash.slice(1);
-      const hashSection = sections.find((section) => section.id === hashSectionId);
+      const hashSection = sections.find(
+        (section) => section.id === hashSectionId,
+      );
 
-      if (hashSection && Math.abs(hashSection.getBoundingClientRect().top) < 2) {
+      if (
+        hashSection &&
+        Math.abs(hashSection.getBoundingClientRect().top) < 2
+      ) {
         setSelected(hashSection.id);
         return;
       }
@@ -52,6 +64,7 @@ const SideBar = () => {
     };
 
     updateSelectedSection();
+
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
     window.addEventListener("hashchange", requestUpdate);
@@ -69,7 +82,11 @@ const SideBar = () => {
 
   const handleLogoClick = () => {
     setSelected("hero");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -80,67 +97,66 @@ const SideBar = () => {
         transition={{ duration: 0.8 }}
         className={styles.sideBar}
       >
-        <Link href="/#hero" className={styles.logo} onClick={handleLogoClick}>
-          AS<span>.</span>
+        <Link
+          href="/#hero"
+          className={styles.logo}
+          onClick={handleLogoClick}
+          aria-label="Home"
+        >
+          <FiHome size={18} strokeWidth={2.2} />
         </Link>
 
         <SideBarLink
           href="/#about"
-          label="About"
+          icon={<FiUser size={18} strokeWidth={2.2} />}
           ariaLabel="About me"
           onClick={() => setSelected("about")}
           selected={selected}
           delay={0.1}
-          key={1}
         />
 
         <SideBarLink
           href="/#skills"
-          label="Skills"
+          icon={<FiCode size={18} strokeWidth={2.2} />}
           ariaLabel="My tech stacks"
           onClick={() => setSelected("skills")}
           selected={selected}
-          key={2}
           delay={0.2}
         />
 
         <SideBarLink
           href="/#projects"
-          label="Projects"
+          icon={<FiFolder size={18} strokeWidth={2.2} />}
           ariaLabel="My projects"
           onClick={() => setSelected("projects")}
           selected={selected}
-          key={3}
           delay={0.3}
         />
 
         <SideBarLink
           href="/#experience"
-          label="Exp."
+          icon={<FiBriefcase size={18} strokeWidth={2.2} />}
           ariaLabel="My experience"
           onClick={() => setSelected("experience")}
           selected={selected}
-          key={4}
           delay={0.4}
         />
 
         <SideBarLink
           href="/#certification"
-          label="Certif."
+          icon={<FiAward size={18} strokeWidth={2.2} />}
           ariaLabel="My certifications"
           onClick={() => setSelected("certification")}
           selected={selected}
-          key={5}
           delay={0.5}
         />
 
         <SideBarLink
           href="/#contact"
-          label="Contact"
-          ariaLabel="Let's contact me"
+          icon={<FiMail size={18} strokeWidth={2.2} />}
+          ariaLabel="Contact me"
           onClick={() => setSelected("contact")}
           selected={selected}
-          key={6}
           delay={0.6}
         />
       </motion.nav>
